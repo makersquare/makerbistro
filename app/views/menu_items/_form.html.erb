@@ -19,6 +19,12 @@
     <%= f.label :price %><br>
     <%= f.number_field :price %>
   </div>
+   <div class="field">
+    <%= f.label :ingredient %><br>
+    <%= collection_select(Ingredient.all, :id, :name) %>
+
+
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
