@@ -11,8 +11,6 @@ class MenuItemsController < ApplicationController
   # GET /menu_items/1
   # GET /menu_items/1.json
   def show
-    @ingredient = @menu_item.ingredients.new
-
     if params[:ingredient] != nil
       @menu_item.ingredients.create(ingredient_params)
     end
