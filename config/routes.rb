@@ -1,4 +1,7 @@
 Makerbistro::Application.routes.draw do
+  resources :menu_items
+
+  post "/menu_items/:id" => "menu_items#show", as: "ingredients"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

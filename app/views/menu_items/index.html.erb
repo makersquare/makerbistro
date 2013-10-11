@@ -1,4 +1,6 @@
-<h1>Listing menu_items</h1>
+<h1>Listing of Menu Items</h1>
+
+<%= render "form" %>
 
 <table>
   <thead>
@@ -16,11 +18,13 @@
         <td><%= link_to 'Show', menu_item %></td>
         <td><%= link_to 'Edit', edit_menu_item_path(menu_item) %></td>
         <td><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <ul>
+          <% menu_item.ingredients.all.each do |ingredient| %>
+            <li><%= ingredient.name %></li>
+          <% end %>
+          </ul>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Menu item', new_menu_item_path %>

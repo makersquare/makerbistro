@@ -5,11 +5,17 @@ class MenuItemsController < ApplicationController
   # GET /menu_items.json
   def index
     @menu_items = MenuItem.all
+    @menu_item = MenuItem.new
   end
 
   # GET /menu_items/1
   # GET /menu_items/1.json
   def show
+    @ingredient = @menu_item.ingredients.new
+
+    if params[:ingredient] != nil
+      @menu_item.ingredients.create(ingredient_params)
+    end
   end
 
   # GET /menu_items/new
@@ -70,5 +76,9 @@ class MenuItemsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def menu_item_params
       params.require(:menu_item).permit(:name)
+    end
+
+    def ingredient_params
+      params[:ingredient].permit(:name)
     end
 end
