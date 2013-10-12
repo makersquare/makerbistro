@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131010155724) do
+ActiveRecord::Schema.define(version: 20131012205824) do
 
   create_table "menu_items", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "price"
   end
 
 end
