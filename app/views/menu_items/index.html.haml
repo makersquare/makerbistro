@@ -1,0 +1,23 @@
+%h1 Now Serving:
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+      %th
+
+    %tbody
+      -@menu_items.each do |menu_item|
+        %tr
+          %td= menu_item.name
+          %td= menu_item.price
+          %td= link_to 'Show', menu_item
+          %td= link_to 'Edit', edit_menu_item_path(menu_item)
+          %td= link_to 'Destroy', menu_item, data: { method: :delete }
+
+%br
+
+= link_to 'New Menu item', new_menu_item_path
+
