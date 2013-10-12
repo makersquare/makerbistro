@@ -9,3 +9,10 @@
 MenuItem.create({name: "pasta", price: "$10"})
 MenuItem.create({name: "cheesey bread", price: "$5"})
 MenuItem.create({name: "pizza", price: "$15"})
+
+Ingredient.create({food_thing: "dough"})
+Ingredient.create({food_thing: "sauce"})
+Ingredient.create({food_thing: "cheese"})
+Ingredient.create({food_thing: "noodles"})
+Ingredient.create({food_thing: "meat"})
+Ingredient.create({food_thing: "garlic"})
