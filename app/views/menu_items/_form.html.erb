@@ -20,13 +20,14 @@
     <%= f.number_field :price %>
   </div>
   <div class="field">
-    <%= f.label :ingredient %><br>
+    <%= f.label :ingredients %><br>
     <% Ingredient.all.each do |ingredient| %>
       <%= check_box_tag(ingredient.id) %>
-      <%= label_tag(ingredient.name, ingredient.name) %>
-
+      
+      <%= label_tag(@menu_item.ingredients, ingredient.name) %>
+      
     <% end %>
-
+    <% @menu_item.ingredients = [] %>
 
   </div>
   <div class="actions">
