@@ -19,9 +19,13 @@
     <%= f.label :price %><br>
     <%= f.number_field :price %>
   </div>
-   <div class="field">
+  <div class="field">
     <%= f.label :ingredient %><br>
-    <%= collection_select(Ingredient.all, :id, :name) %>
+    <% Ingredient.all.each do |ingredient| %>
+      <%= check_box_tag(ingredient.id) %>
+      <%= label_tag(ingredient.name, ingredient.name) %>
+
+    <% end %>
 
 
   </div>

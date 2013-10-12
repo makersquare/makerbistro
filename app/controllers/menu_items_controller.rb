@@ -6,6 +6,7 @@ class MenuItemsController < ApplicationController
   def index
     @menu_items = MenuItem.all
     @menu_item = MenuItem.new
+    
   end
 
   # GET /menu_items/1

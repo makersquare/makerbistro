@@ -5,6 +5,7 @@
     <tr>
       <th>Name</th>
       <th>Price</th>
+      <th><%= link_to "Ingredients", ingredients_path %></th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,6 +17,11 @@
       <tr>
         <td><%= menu_item.name %></td>
         <td><%= menu_item.price %></td>
+        <td>
+          <% menu_item.ingredients.each do |ingredient| %>
+          <%= "#{ingredient.name.capitalize}, "  %>
+          <% end %>
+        </td>
         <td><%= link_to 'Show', menu_item %></td>
         <td><%= link_to 'Edit', edit_menu_item_path(menu_item) %></td>
         <td><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -25,5 +31,5 @@
 </table>
 
 <br>
-
+<h3> Add new Menu Item </<h3></h3>
 <%= render 'form' %>
