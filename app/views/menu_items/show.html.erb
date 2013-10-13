@@ -1,4 +1,18 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <%= @menu_item.name %>
+</p>
+
+<p>
+  <%= @menu_item.price %>
+</p>
+
+<ul><h4>Ingredients</h4>
+  <% @menu_item.ingredients.each do |ingredient| %>
+    <li><%= ingredient.name.capitalize %> </li>
+  <% end%>
+</ul>
+
 <%= link_to 'Edit', edit_menu_item_path(@menu_item) %> |
 <%= link_to 'Back', menu_items_path %>

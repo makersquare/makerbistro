@@ -10,7 +10,27 @@
       </ul>
     </div>
   <% end %>
-  <%= f.text_field :name %>
+
+<!--   check_box("puppy", "commands", {:multiple => true}, "sit", nil)
+ -->
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :ingredient %><br>
+    <% Ingredient.all.each do |ingredient| %>
+      <%= check_box_tag("menu_item.ingredients", ingredient.id) %>
+
+      <%= label_tag(@menu_item.ingredients, ingredient.name) %>
+      
+    <% end %>
+
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
