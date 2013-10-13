@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+<!--   check_box("puppy", "commands", {:multiple => true}, "sit", nil)
+ -->
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -20,14 +22,13 @@
     <%= f.number_field :price %>
   </div>
   <div class="field">
-    <%= f.label :ingredients %><br>
+    <%= f.label :ingredient %><br>
     <% Ingredient.all.each do |ingredient| %>
-      <%= check_box_tag(ingredient.id) %>
-      
+      <%= check_box_tag("menu_item.ingredients", ingredient.id) %>
+
       <%= label_tag(@menu_item.ingredients, ingredient.name) %>
       
     <% end %>
-    <% @menu_item.ingredients = [] %>
 
   </div>
   <div class="actions">
