@@ -1,12 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h3><strong><%= @menu_item.name %></strong></h3>
-<ul>
+<h2><strong><%= @menu_item.name.titleize %></strong></h2>
+<p>Price:<%= number_to_currency @menu_item.price %></p>
 	<h4>Ingredients:</h4>
 	<% @ingredients.each do |ingredient| %>
 	<li><%= ingredient.name %></li>
-	<% end %>
-</ul>
+<% end %>
 
 <%= link_to 'Edit', edit_menu_item_path(@menu_item) %> |
 <%= link_to 'Back', menu_items_path %>

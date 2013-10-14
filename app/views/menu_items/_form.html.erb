@@ -16,8 +16,8 @@
   <% @menu_item.ingredients.each do |ingredient| %>
   <%= f.fields_for "ingredients[]", ingredient do |ingredient_form| %>
     <%= ingredient_form.text_field :name %>
-  <% end %>
-  <% end %>
+    <% end %>
+    <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
