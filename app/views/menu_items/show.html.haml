@@ -1,0 +1,12 @@
+%h2= @menu_item.name
+%ul
+  -@menu_item.ingredients.all.each do |ingredient|
+    %li=ingredient.name
+
+=simple_form_for @menu_item.ingredients.new do |f|
+  =f.input :name, placeholder: "new ingredient!", :input_html => {:maxlength => 30, :size => 40}
+  =f.button :submit
+
+= link_to 'Edit', edit_menu_item_path(@menu_item)
+|
+= link_to 'Back', menu_items_path
