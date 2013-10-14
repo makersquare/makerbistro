@@ -17,7 +17,9 @@
       <tr>
         <td><p><%= menu_item.name.titleize %></p></td>
         <td><p><%= number_to_currency menu_item.price %></p></td>
-        <td><p><%= menu_item.ingredients.all %></p></td>
+       <td><% @ingredients.each do |ingredient| %>
+      <li><%= ingredient.name %></li></td>
+    <% end %>
         <td><%= link_to 'Show', menu_item %></td>
         <td><%= link_to 'Edit', edit_menu_item_path(menu_item) %></td>
         <td><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
