@@ -3,4 +3,7 @@ Makerbistro::Application.routes.draw do
     resources :ingredients
   end
 
+  resource :ingredients
+
+  root "menu_item#index"
 end

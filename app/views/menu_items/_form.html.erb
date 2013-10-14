@@ -10,8 +10,14 @@
       </ul>
     </div>
   <% end %>
-  <%= f.text_field :name %>
-  <%= f.text_field :price %>
+  
+  <%= f.text_field :name, :placeholder => "Item Name" %>
+  <%= f.text_field :price, :placeholder => "Item Price" %>
+  <% @menu_item.ingredients.each do |ingredient| %>
+  <%= f.fields_for "ingredients[]", ingredient do |ingredient_form| %>
+    <%= ingredient_form.text_field :name %>
+  <% end %>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
