@@ -1,4 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<h3><strong><%= @menu_item.name %></strong></h3>
+<ul>
+	<h4>Ingredients:</h4>
+	<% @ingredients.each do |ingredient| %>
+	<li><%= ingredient.name %></li>
+	<% end %>
+</ul>
+
 <%= link_to 'Edit', edit_menu_item_path(@menu_item) %> |
 <%= link_to 'Back', menu_items_path %>

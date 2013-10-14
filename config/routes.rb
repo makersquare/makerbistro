@@ -1,11 +1,6 @@
 Makerbistro::Application.routes.draw do
-  
-  root 'menu_items#index'
-
   resources :menu_items do
-    recources :ingredients
+    resources :ingredients
   end
-
-  resources :ingredients
 
 end

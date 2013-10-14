@@ -3,6 +3,8 @@
 <table>
   <thead>
     <tr>
+      <th>Item Name:</th>
+      <th>Item Price:</th>
       <th></th>
       <th></th>
       <th></th>
@@ -12,7 +14,8 @@
   <tbody>
     <% @menu_items.each do |menu_item| %>
       <tr>
-        <td><p><%= menu_item.name %></p></td>
+        <td><p><%= menu_item.name.titleize %></p></td>
+        <td><p><%= number_to_currency menu_item.price %></p></td>
         <td><%= link_to 'Show', menu_item %></td>
         <td><%= link_to 'Edit', edit_menu_item_path(menu_item) %></td>
         <td><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
