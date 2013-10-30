@@ -1,5 +1,8 @@
 • Create a resturaunt menu using Ruby on Rails
+
 • Homepage should list all menu items
+
 • Each menu item should have a name, a price, and a list of ingredients
+
 • User should be able to add menu items at the bottom of the homepage
 • Technology: Ruby on Rails and Haml
