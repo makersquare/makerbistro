@@ -1,3 +1,21 @@
+body {
+	background-color: #dbe3eb;
+}
+
+h1 {
+	text-align: center;
+	font-family: molesk;
+	font-size: 3em;
+}
+
+td {
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
